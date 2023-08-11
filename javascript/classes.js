@@ -29,7 +29,9 @@ class User {
   }
 
   processChangePassword(currentPassword, newPassword) {
-    // Replace this with your code
+    if (this.password === currentPassword) {
+      this.password = newPassword;
+    } else return false;
   }
 }
 
@@ -54,13 +56,21 @@ class Library {
   }
 
   createAndAddBook(title, author) {
-    // Replace this with your code
+    const newBook = new Book(title, author);
+    this.books.push(newBook);
   }
 
   findBooksByAuthor(author) {
-    // Replace this with your code
+    const bookIndex = this.books.findIndex((invItem) => invItem === author);
+    const newArr = [];
+    newArr.push(invItem);
   }
 }
+
+const lib1 = new Library();
+lib1.createAndAddBook("big", "book");
+lib1.findBooksByAuthor();
+console.log(lib1);
 
 // You might be familiar with the fact that, in geometry, squares are rectangles
 // with four equal sides. In other words, Square is a subclass of Rectangle.
@@ -90,7 +100,15 @@ class Rectangle {
 }
 
 class Square extends Rectangle {
-  // Replace this with your code
+  constructor(length) {
+    this.length = length;
+    this.width = length;
+  }
+  getArea() {
+    if (this.length != this.width) {
+      return undefined;
+    } else return this.length * this.width;
+  }
 }
 
 export { Bicycle, Book, Library, Rectangle, Square, User };

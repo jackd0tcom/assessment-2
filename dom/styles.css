@@ -139,3 +139,7 @@ section {
   justify-content: center;
   align-items: center;
 }
+
+.red-border {
+  border: 2px solid red;
+}
