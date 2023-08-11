@@ -6,7 +6,11 @@
 //   bicycles might come from different manufacturers
 // - Bicycles come in different colors (ex.: red, silver, blue…)
 class Bicycle {
-  // Replace this with your code
+  constructor(manufacturer, color, wheels = 2) {
+    this.manufacturer = manufacturer;
+    this.color = color;
+    this.wheels = wheels;
+  }
 }
 
 // This User class is intended to be used in a web application where users can

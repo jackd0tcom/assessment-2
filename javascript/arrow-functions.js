@@ -1,37 +1,45 @@
 // Write an arrow function that returns 2.
-const giveMeTwo = undefined; // Replace `undefined` with your code
+const giveMeTwo = () => 2; // Replace `undefined` with your code
 
 // Write an arrow function that takes in a movie and returns '<movie> is the best movie
 // ever!' where <movie> is the argument passed into the function.
-const bestMovie = undefined; // Replace `undefined` with your code
+const bestMovie = (movie) => `${movie} is the best movie ever!`;
 
 // Write an arrow function called 'compareNums' that takes in 2 parameters,
 // which will be numbers.
 // The function should return the bigger number.
 // If the numbers are the same, just return the number.
-const compareNums = undefined; // Replace `undefined` with your code
+function compareNums(x, y) {
+  if (x > y) {
+    return x;
+  } else {
+    if (y > x) {
+      return y;
+    } else return x;
+  }
+} // Replace `undefined` with your code
 
 const foods = [
   {
-    name: 'bread',
+    name: "bread",
     carbs: 36,
     protein: 8,
     fat: 2,
   },
   {
-    name: 'mayo mustard mix',
+    name: "mayo mustard mix",
     carbs: 0,
     protein: 0,
     fat: 10,
   },
   {
-    name: 'turkey',
+    name: "turkey",
     carbs: 0,
     protein: 25,
     fat: 1,
   },
   {
-    name: 'cheese',
+    name: "cheese",
     carbs: 0,
     protein: 5,
     fat: 7,
@@ -42,7 +50,10 @@ const foods = [
 // Calories can be calculated by multiplying carbs by 4, protein by 4, fat by 9,
 // and then adding the results together.
 function addCalories() {
-  // Replace this with your code
+  foods.forEach((el) => {
+    let calories = el.carbs * 4 + el.protein * 4 + el.fat * 9;
+    el.calories = calories;
+  });
   return foods;
 }
 
@@ -50,28 +61,28 @@ function addCalories() {
 // Think of this array as a store's inventory.
 const products = [
   {
-    name: 'backpack',
-    color: ['red', 'yellow'],
+    name: "backpack",
+    color: ["red", "yellow"],
     price: 500,
   },
   {
-    name: 'shirt',
-    color: ['blue'],
+    name: "shirt",
+    color: ["blue"],
     price: 400,
   },
   {
-    name: 'shoes',
-    color: ['red'],
+    name: "shoes",
+    color: ["red"],
     price: 1200,
   },
   {
-    name: 'socks',
-    color: ['yellow', 'blue'],
+    name: "socks",
+    color: ["yellow", "blue"],
     price: 200,
   },
   {
-    name: 'pants',
-    color: ['blue', 'red'],
+    name: "pants",
+    color: ["blue", "red"],
     price: 1000,
   },
 ];
@@ -80,7 +91,10 @@ const products = [
 // Using the map method, make a copy of your products array with the prices reduced by 25%
 // and return it.
 function getSaleProducts() {
-  // Replace this with your code
+  const sale = products.map((key) => {
+    return { name: key.name, color: key.color, price: (key.price *= 0.75) };
+  });
+  return sale;
 }
 
 // A customer has placed an order - they want one of every product that has blue on it.
@@ -88,12 +102,24 @@ function getSaleProducts() {
 // to a new variable called 'blueProducts'.
 // (Hint: look up the array method 'includes' on MDN)
 function getBlueProducts() {
-  // Replace this with your code
+  const blueProducts = products.filter((key) => {
+    if (key.color.includes("blue")) {
+      return key;
+    }
+  });
+  return blueProducts;
 }
 
 // Get the total price of all the products using the reduce method.
 function getTotalPrice() {
-  // Replace this with your code
+  const prices = [];
+  products.forEach((val) => {
+    prices.push(val.price);
+  });
+  const total = prices.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  );
+  return total;
 }
 
 export {
