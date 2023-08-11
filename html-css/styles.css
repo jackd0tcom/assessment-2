@@ -1,4 +1,4 @@
-/*
+ /*
 
 these are the colors used in the example
 ***you can use them if you'd like or you can choose your own***
@@ -12,3 +12,86 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+
+
+
+header {
+    width: 100vw;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    color: rgb(42, 171, 226);
+    display: flex;
+    /* width: 20%; */
+    font-size: 30px;
+    align-items: center;
+    align-content: center;
+    margin-left: 2vw;
+    flex-wrap: nowrap;
+}
+
+nav {
+    display: flex;
+    color: white;
+    width: 40%;
+    margin-left: 30%;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+main {
+    width: 100vw;
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#article {
+    padding: 50px;
+    /* display: flex; */
+    width: 50%;
+}
+
+#article p {
+    display: block;
+}
+
+#sidebar{
+    display: flex;
+    /* width: 10%; */
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;   
+    border-radius:3%;
+    box-shadow: 0px 0px 30px rgb(183, 183, 183);
+}
+
+.profile img {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#popular {
+    margin-top: 30px;
+}
