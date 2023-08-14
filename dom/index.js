@@ -2,7 +2,7 @@ let closeForm = document.querySelector("#close-form");
 let form = document.querySelector(".form");
 let userName = document.querySelector("#name");
 let email = document.querySelector("#email");
-let subIntro = document.querySelector(".sub-intro");
+let subIntro = document.querySelector(".form-container");
 
 closeForm.addEventListener("click", () => {
   form.classList.toggle("hide");

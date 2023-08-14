@@ -132,14 +132,23 @@ betterCourses();
 function findPairs() {
   const lettersToPair = ["e", "k", "s", "a", "e", "s", "a", "n", "k", "n"];
   const pairsArray = [];
-
-  for (let letter of lettersToPair) {
-    for (let val of letter) {
-    }
-  }
+  // for (let i = 0; i < lettersToPair.length; i++) {
+  //   for (let j = i + 1; j < lettersToPair.length; j++) {
+  //     if (lettersToPair[i] === lettersToPair[j]) {
+  //       pairsArray.push([i, j]);
+  //     }
+  //   }
+  // }
   // console.log(pairsArray);
+  // return pairsArray;
 
-  return pairsArray;
+  lettersToPair.forEach(letter, (index) => {
+    lettersToPair.forEach(secLetter, (secInd) => {
+      if (letter === secLetter && index < secInd) {
+        pairsArray.push([ind, secInd]);
+      }
+    });
+  });
 }
 
 findPairs();

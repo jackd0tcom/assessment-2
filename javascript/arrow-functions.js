@@ -112,14 +112,10 @@ function getBlueProducts() {
 
 // Get the total price of all the products using the reduce method.
 function getTotalPrice() {
-  const prices = [];
-  products.forEach((val) => {
-    prices.push(val.price);
-  });
-  const total = prices.reduce(
-    (accumulator, currentValue) => accumulator + currentValue
-  );
-  return total;
+  let totalPrice = products.reduce((accum, obj) => {
+    return accum + obj.price;
+  }, 0);
+  return totalPrice;
 }
 
 export {
